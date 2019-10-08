@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 
 
-const taskSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
   name: String,
   started: Date,
   completed: Boolean
 });
 
-const Task = mongoose.model("products", taskSchema);
+const Product = mongoose.model("products", productSchema);
 
 module.exports = {
   getTasks: () => {
-    return Task.find({});
+    return Product.find({});
   },
-  addTask: data => new Task(data).save(),
-  deleteTask: id => Task.findByIdAndRemove(id)
+  addTask: data => new Product(data).save(),
+  deleteTask: id => Product.findByIdAndRemove(id)
 };
