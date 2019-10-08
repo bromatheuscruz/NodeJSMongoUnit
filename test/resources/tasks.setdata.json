@@ -1,9 +1,12 @@
 {
-    "tasks": [
+    "products": [
         {
-            "name": "Matheus",
-            "started": "2019-07-12T00:00:00.000Z",
-            "completed": false
+            "name": "Soap",
+            "quantity": 6
+        },
+        {
+            "name": "Shampoo",
+            "quantity": 1
         }
     ]
 }

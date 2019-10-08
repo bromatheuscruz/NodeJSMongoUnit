@@ -1,9 +1,5 @@
 const mongoose = require("mongoose");
-const mongoUrl = process.env.MONGO_URL || "mongodb://localhost:27017/mongounit";
 
-mongoose.connect(mongoUrl, {
-  useNewUrlParser: true
-});
 
 const taskSchema = new mongoose.Schema({
   name: String,
@@ -11,7 +7,7 @@ const taskSchema = new mongoose.Schema({
   completed: Boolean
 });
 
-const Task = mongoose.model("tasks", taskSchema);
+const Task = mongoose.model("products", taskSchema);
 
 module.exports = {
   getTasks: () => {

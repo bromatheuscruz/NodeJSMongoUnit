@@ -1,6 +1,5 @@
 const expect = require("chai").expect;
 const mongoUnit = require("mongo-unit");
-const service = require("../src/service");
 const request = require("supertest");
 
 const testMongoUrl = process.env.MONGO_URL;
@@ -14,9 +13,10 @@ describe("service", () => {
   beforeEach(() => mongoUnit.initDb(testMongoUrl, testData));
   afterEach(() => mongoUnit.drop());
 
-  it("Should find all tasks", async () => {
-    const response = await request(app()).get("/tasks");
+  it("Should find all products", async () => {
+    const response = await request(app()).get("/products");
     expect(response.status).to.equal(200);
-    expect(response.body[0].name).to.equal("Matheus");
+    expect(response.body[0].name).to.equal("Soap");
+    expect(response.body[1].name).to.equal("Shampoo");
   });
 });
